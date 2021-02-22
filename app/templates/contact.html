@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+{% include 'header.html' %}
+
+<form method="POST" action="">
+    {{ form.csrf_token}}
+    <h2> Contact Form </h2>
+    <p > Fill in this form to contact site owners.</p>
+        
+        <div class=" d-block block-row m-2">
+
+            <div class = "mr-1">
+                {{form.Name.label}}
+                <p>Please enter your full name.</p>
+                {{form.Name(class = "form-control  mb-2 rounded border")}}
+            </div>
+
+            <div>
+                {{form.Email.label}}
+                <p>Please enter your E-mail address</p>
+                {{form.Email(class = "form-control  mb-2 rounded border")}}
+            </div>
+                            
+        
+
+        <div class = "m-2">
+                        
+            {{form.Subject.label}}
+            <p>Please enter the subject for your message.</p>
+            {{form.Subject(class = "form-control mb-2 rounded border")}}
+        </div>
+
+        <div class=" m-2">
+            {{form.Message.label}}
+            <p>Please enter the message you would like to send.</p>
+            {{form.Message(class = "form-control  mb-2 rounded border")}}
+        </div>
+    </div>
+        <div>
+            <button type="submit" class="btn btn-primary  text-white font-weight-bold"> Submit</button>
+        </div>
+
+        
+                       
+                        
+                        
+                        
+                        
+                        
+</form>
+
+{% endblock %}
